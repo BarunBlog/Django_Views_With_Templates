@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Django blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Django Blog</a></h1>
+        </div>
+        
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text |linebreaksbr }}</p> <!--   |linebreaksbr is piping the posts' text through a filter to convert line-breaks into paragraphs.    -->
+                <br>
+            </div>
+            
+        {% endfor %}
+    </body>
+</html>
